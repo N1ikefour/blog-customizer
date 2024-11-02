@@ -7,6 +7,7 @@ import { useRef, useState } from 'react';
 import { useOutsideClickClose } from '../select/hooks/useOutsideClickClose';
 import clsx from 'clsx';
 import { Select } from '../select';
+import { RadioGroup } from '../radio-group';
 
 type ArticleParamsFormProps = { 
 	setCurrentArticleState: (param: ArticleStateType) => void;
@@ -52,11 +53,12 @@ export const ArticleParamsForm = ({currentArticleState, setCurrentArticleState}:
 						title='Шрифт'
 					/>
 
-					<Select
+					<RadioGroup
 						selected={selectArticleState.fontSizeOption}
+						name='fontSize'
 						options={fontSizeOptions}
-						onChange={(option) =>handleChange('fontSizeOption', option)}
-						title='Размер шрифта'
+						onChange={(option) => handleChange('fontSizeOption', option)}
+						title='размер шрифта'
 					/>
 
 
